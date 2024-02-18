@@ -7,6 +7,7 @@ header #top-header {
   padding: 10px 0;
   background: #939878;
   height: 40px;
+  position: relative;
 }
 header #top-header h6 {
   font-family: Roboto;
@@ -16,6 +17,11 @@ header #top-header h6 {
   color: white;
   text-align: center;
 }
+header #top-header .x {
+  position: absolute;
+  right: 50px;
+  top: 12px;
+}
 header #fixed {
   padding: 16px 0;
   background-color: white;
@@ -24,6 +30,15 @@ header #fixed .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+header #fixed .nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+header #fixed .nav .logo h3 {
+  font-size: 26px;
+  color: #2a2c1f;
 }
 header #fixed .nav ul {
   display: flex;
@@ -116,7 +131,7 @@ header .menu-x span:nth-child(2) {
 @media (max-width: 920px) {
   header #navbar-responsive {
     position: fixed;
-    top: 108px;
+    top: 104px;
     bottom: 0;
     left: 100%;
     height: 500px;
@@ -126,12 +141,171 @@ header .menu-x span:nth-child(2) {
     align-items: center;
     background-color: #ffffff;
     transition: 0.5s;
+    z-index: 100;
   }
   header .header-button-2 {
     margin: 0px !important;
   }
   header .menu-btn {
     display: flex;
+  }
+}
+
+footer #top-footer {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+footer #top-footer .top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1.7fr;
+  place-items: start;
+}
+footer #top-footer .top .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+footer #top-footer .top .logo h3 {
+  font-size: 32px;
+  color: #2a2c1f;
+}
+footer #top-footer .top ul {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+footer #top-footer .top ul li a {
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #2a2c1f;
+}
+footer #top-footer .top .subscribe {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+footer #top-footer .top .subscribe h5 {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #2a2c1f;
+}
+footer #top-footer .top .subscribe p {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #65665c;
+}
+footer #top-footer .top .subscribe form {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 16px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+footer #top-footer .top .subscribe form input {
+  padding: 12px 14px;
+  outline: none;
+  border: 1px solid #e7e8e3;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.0784313725);
+  border-radius: 6px;
+  height: 48px;
+  max-width: 240px;
+  width: 100%;
+}
+footer #top-footer .top .subscribe form button {
+  padding: 0px 28px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: white;
+  border: 1px solid #cf6f49;
+  background: #cf6f49;
+  border-radius: 6px;
+  height: 50px;
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+footer #top-footer .top .subscribe form button:hover {
+  background: white;
+  color: #cf6f49;
+}
+footer #top-footer .top .subscribe .pri {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+footer #top-footer .top .subscribe .pri h6 {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #65665c;
+}
+footer #top-footer .top .subscribe .pri a {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #65665c;
+}
+footer #bottom-footer {
+  padding: 24px 0;
+  background: #f5f5f2;
+}
+footer #bottom-footer .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+footer #bottom-footer .bottom .left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+footer #bottom-footer .bottom .left p {
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #65665c;
+}
+footer #bottom-footer .bottom .icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+@media (max-width: 900px) {
+  footer #top-footer .top {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 30px;
+  }
+}
+@media (max-width: 600px) {
+  footer #top-footer .top {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
   }
 }
 
@@ -180,6 +354,9 @@ button {
   cursor: pointer;
   z-index: 99;
   transition: 0.6s;
+}
+#backtop:hover {
+  background: rgb(247, 249, 235);
 }
 
 main {
@@ -540,6 +717,9 @@ main #area .area .cards .card {
 main #area .area .cards .card:hover {
   box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.0784313725);
   background: rgb(247, 249, 235);
+}
+main #area .area .cards .card .img {
+  width: 100%;
 }
 main #area .area .cards .card .text {
   padding: 24px;
@@ -1027,11 +1207,174 @@ main #blog .blog .cards .card .text h3 {
   letter-spacing: 0em;
   color: #2a2c1f;
 }
+main #blog .blog .cards .card .img {
+  width: 100%;
+}
 main #blog .blog .cards .card:hover {
   background: rgb(247, 249, 235);
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.0784313725);
 }
 
+@media (max-width: 1260px) {
+  main #home .home div .bottom {
+    display: none;
+  }
+}
+@media (max-width: 1100px) {
+  main #home {
+    padding: 60px 0;
+  }
+  main #home .home {
+    flex-direction: column-reverse;
+  }
+  main #family .family:nth-child(1) {
+    flex-direction: column-reverse;
+  }
+  main #family .family:nth-child(2) {
+    flex-direction: column;
+  }
+}
+@media (max-width: 1000px) {
+  main #logos .logos {
+    flex-direction: column;
+    gap: 30px;
+  }
+  main #logos .logos .logo {
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media (max-width: 900px) {
+  main #home .top {
+    display: none;
+  }
+  main #area .area .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  main #location .loc .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  main #blog .blog .p {
+    flex-direction: column;
+  }
+  main #blog .blog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 750px) {
+  main #home .home img {
+    width: 100%;
+  }
+  main #works .works .cards {
+    grid-template-columns: 1fr;
+  }
+  main #family .family .img {
+    width: 100%;
+  }
+  main #family .family .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  main #family .family .text h2 {
+    text-align: center;
+    font-size: 40px;
+  }
+  main #family .family .text p {
+    text-align: center;
+  }
+  main #home .home div {
+    align-items: center;
+  }
+  main #home .home div h1 {
+    text-align: center;
+    font-size: 40px;
+    line-height: 40px;
+  }
+  main #home .home div p {
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  main #works .works h2 {
+    font-size: 40px;
+  }
+  main #works .works p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  main #logos .logos h5 {
+    text-align: center;
+  }
+  main #family .family .text h2 {
+    font-size: 40px;
+    line-height: 44px;
+  }
+  main #family .family .text p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  main #family .family .text .cards .card p {
+    text-align: start;
+  }
+  main #say .say .cards {
+    grid-template-columns: 1fr;
+  }
+  main #blog .blog .p p {
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  main #blog .blog .cards {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 620px) {
+  main #area .area .cards {
+    grid-template-columns: 1fr;
+  }
+  main #location .loc .cards {
+    grid-template-columns: 1fr;
+  }
+  main #family .family .text .cards {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+  main #location .bottom h2 {
+    font-size: 40px;
+    line-height: 44px;
+  }
+  main #location .bottom p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  main #location .bottom {
+    padding: 50px;
+  }
+  main #family .family .text .cards .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.0784313725);
+    border: 1px solid #e7e8e3;
+    border-radius: 6px;
+    padding: 20px;
+  }
+  main #family .family .text .cards .card p {
+    text-align: center;
+  }
+  header #top-header .x {
+    display: none;
+  }
+  main #home .home div form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 @font-face {
   font-family: Roboto;
   src: url(../fonts/Roboto-Regular.ttf);
