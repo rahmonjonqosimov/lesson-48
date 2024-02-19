@@ -36,13 +36,14 @@ modeBtn.addEventListener("click", function () {
   document.body.classList.toggle("dark");
 });
 // FIXED //////////////////////
-window.addEventListener("scroll", function () {
-  var scrollY = window.scrollY || window.pageYOffset;
-  var fixedElement = document.getElementById("fixed");
-
-  if (scrollY >= 40 && fixedElement) {
-    fixedElement.classList.add("salom");
-  } else if (fixedElement) {
-    fixedElement.classList.remove("salom");
-  }
+window.addEventListener("DOMContentLoaded", function () {
+  var element = document.querySelector("nav-items"); // HTML elementingizni tanlash
+  element.addEventListener("scroll", function () {
+    var scrollPosition = element.scrollTop;
+    if (scrollPosition > 40) {
+      element.classList.add("scrolled"); // CSS klassni qo'shish
+    } else {
+      element.classList.remove("scrolled"); // CSS klassni o'chirish
+    }
+  });
 });

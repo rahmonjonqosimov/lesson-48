@@ -1,7 +1,5 @@
 header {
   font-family: Roboto, sans-serif;
-  /* ////////////////// RESPONSIVE NAVBAR ////////////////////// */
-  /* MEDIA QUERIES */
 }
 header #top-header {
   padding: 10px 0;
@@ -22,30 +20,39 @@ header #top-header .x {
   right: 50px;
   top: 12px;
 }
-header #fixed {
+
+.fixed {
   padding: 16px 0;
   background-color: white;
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  transition: all 0.5s linear;
+  /* ////////////////// RESPONSIVE NAVBAR ////////////////////// */
+  /* MEDIA QUERIES */
 }
-header #fixed .nav {
+.fixed .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-header #fixed .nav .logo {
+.fixed .nav .logo {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-header #fixed .nav .logo h3 {
+.fixed .nav .logo h3 {
   font-size: 26px;
   color: #2a2c1f;
 }
-header #fixed .nav ul {
+.fixed .nav ul {
   display: flex;
   align-items: center;
   gap: 32px;
 }
-header #fixed .nav ul li a {
+.fixed .nav ul li a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,17 +66,17 @@ header #fixed .nav ul li a {
   color: #222222;
   transition: all 0.5s linear;
 }
-header #fixed .nav ul li a:hover {
+.fixed .nav ul li a:hover {
   color: #2a2c1f;
 }
-header #fixed .nav ul li a span {
+.fixed .nav ul li a span {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 20px;
   height: 20px;
 }
-header #fixed .nav ul li .header-button-1 {
+.fixed .nav ul li .header-button-1 {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -86,11 +93,11 @@ header #fixed .nav ul li .header-button-1 {
   transition: all 0.5s linear;
   cursor: pointer;
 }
-header #fixed .nav ul li .header-button-1:hover {
+.fixed .nav ul li .header-button-1:hover {
   background-color: #cf6f49;
   color: white;
 }
-header #fixed .nav ul li .header-button-2 {
+.fixed .nav ul li .header-button-2 {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -103,14 +110,14 @@ header #fixed .nav ul li .header-button-2 {
   cursor: pointer;
   transition: all 0.5s linear;
 }
-header #fixed .nav ul li .header-button-2:hover {
+.fixed .nav ul li .header-button-2:hover {
   background-color: white;
   color: #cf6f49;
 }
-header #navbar-responsive.open {
+.fixed #navbar-responsive.open {
   left: 0;
 }
-header .menu-btn {
+.fixed .menu-btn {
   border: 0;
   background: transparent;
   cursor: pointer;
@@ -118,23 +125,24 @@ header .menu-btn {
   flex-direction: column;
   gap: 4px;
   display: none;
+  transition: all 0.5s ease;
 }
-header .menu-btn span {
+.fixed .menu-btn span {
   display: block;
   width: 20px;
   height: 2.5px;
   background-color: #333;
 }
-header .menu-x span:nth-child(2) {
+.fixed .menu-x span:nth-child(2) {
   display: none;
 }
-@media (max-width: 920px) {
-  header #navbar-responsive {
+@media (max-width: 1000px) {
+  .fixed #navbar-responsive {
     position: fixed;
     top: 104px;
     bottom: 0;
     left: 100%;
-    height: 500px;
+    height: 560px;
     width: 100%;
     flex-direction: column;
     justify-content: center;
@@ -143,12 +151,24 @@ header .menu-x span:nth-child(2) {
     transition: 0.5s;
     z-index: 100;
   }
-  header .header-button-2 {
+  .fixed .header-button-2 {
     margin: 0px !important;
   }
-  header .menu-btn {
+  .fixed .menu-btn {
     display: flex;
   }
+}
+
+.scrolled {
+  top: 64px !important;
+}
+
+.navbar-shrink {
+  padding: 8px 0;
+}
+
+.navbar-shrink #navbar-responsive {
+  top: 48px !important;
 }
 
 footer #top-footer {
@@ -357,6 +377,179 @@ button {
 }
 #backtop:hover {
   background: rgb(247, 249, 235);
+}
+
+/* ////////////////// LIGHT DARK ////////////////////////// */
+#light-dark {
+  background: transparent;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: all 0.3s linear;
+}
+
+.dark #light-dark:hover {
+  background: rgb(52, 51, 51);
+}
+
+.dark #light-dark {
+  fill: white;
+}
+
+.dark {
+  background: rgb(31, 30, 30);
+}
+
+.dark * {
+  color: white !important;
+}
+
+.dark #home {
+  background: rgb(52, 51, 51);
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.dark #home .top {
+  display: none;
+}
+
+.dark #home .bottom {
+  display: none;
+}
+
+.dark .fixed {
+  background: rgb(72, 70, 70);
+}
+
+.dark h5 {
+  background: rgb(52, 51, 51) !important;
+}
+
+.dark .card:hover {
+  background: rgb(82, 77, 77) !important;
+}
+
+.dark button {
+  background: transparent !important;
+}
+
+.dark button:hover {
+  background: rgb(82, 77, 77) !important;
+}
+
+.dark #area {
+  background: rgb(52, 51, 51);
+}
+
+.dark #navbar-responsive {
+  background: rgb(72, 70, 70);
+}
+
+.dark input {
+  background: rgb(88, 86, 86);
+}
+
+.dark ::-moz-placeholder {
+  color: white !important;
+}
+
+.dark ::placeholder {
+  color: white !important;
+}
+
+.dark .menu-btn span {
+  background: white;
+}
+
+.dark #fixed .nav ul li a img {
+  fill: white !important;
+}
+
+.dark h5 {
+  background: transparent !important;
+}
+
+.dark #family .family .text .cards .card:hover {
+  background: transparent !important;
+}
+
+.dark #area .area .cards .card {
+  background: rgb(26, 25, 25);
+}
+
+.dark #area .area-top {
+  display: none;
+}
+
+.dark #area .area-bottom {
+  display: none;
+}
+
+.dark #location {
+  background: rgb(31, 30, 30);
+}
+
+.dark #location .loc .cards .card {
+  background: rgb(26, 25, 25);
+}
+
+.dark #blog {
+  background: rgb(52, 51, 51);
+}
+
+.dark #blog .blog .cards .card {
+  background: rgb(26, 25, 25);
+}
+
+.dark #blog .blog .cards .card .text .qator-1 .k {
+  background: rgb(86, 83, 83);
+}
+
+.dark #bottom-footer {
+  background: rgb(52, 51, 51);
+}
+
+.dark #bottom-footer .bottom .icons svg {
+  display: block;
+}
+
+.dark #bottom-footer .bottom .icons img {
+  display: none;
+}
+
+#bottom-footer .bottom .icons svg {
+  display: none;
+}
+
+.dark header #top-header {
+  background: rgb(65, 63, 63);
+}
+
+.dark #fixed .menu-btn span {
+  background: white;
+}
+
+.dark #navbar-responsive {
+  background: #484646 !important;
+}
+
+.fixed .nav ul li a svg {
+  display: none;
+}
+
+.dark .fixed .nav ul li img {
+  display: none;
+}
+
+.dark .fixed .nav ul li svg {
+  display: block;
+  width: 20px;
+}
+
+.fixed .nav ul li svg {
+  display: none;
 }
 
 main {
@@ -1362,6 +1555,11 @@ main #blog .blog .cards .card:hover {
     border: 1px solid #e7e8e3;
     border-radius: 6px;
     padding: 20px;
+    transition: all 0.5s linear;
+  }
+  main #family .family .text .cards .card:hover {
+    box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.0784313725);
+    background: rgb(247, 249, 235);
   }
   main #family .family .text .cards .card p {
     text-align: center;
@@ -1371,6 +1569,18 @@ main #blog .blog .cards .card:hover {
   }
   main #home .home div form {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  main #family .family .text .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  main #area .area .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  main #location .loc .buttons {
     flex-direction: column;
     align-items: center;
   }
